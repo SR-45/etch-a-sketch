@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#container > div {
+    background-color: blue;
+    height: auto;
+    aspect-ratio: 1/1; 
+    border-color: black;
+    border-style: solid;
+    box-sizing: border-box;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 50%;
+    align-items: center;
+}
