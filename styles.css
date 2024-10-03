@@ -28,3 +28,9 @@ body {
     border: 10px solid rgb(189, 189, 189);
     border-radius: 10px;
 }
+
+.buttons {
+    display: flex;
+    margin: 1em;
+    gap: 20px;
+}
