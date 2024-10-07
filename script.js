@@ -2,7 +2,9 @@ let container = document.getElementById('container')
 let mouseDown = false
 let picker = document.getElementById('picker')
 let curcolour = 'black'
-
+let prevcolour = 'black'
+let slider = document.getElementById('slider')
+let erase = false
 
 
 function createGrid(size) {
@@ -35,6 +37,7 @@ function colourGrid() {
 
         })
     }
+    
     )
 }
 
@@ -42,7 +45,7 @@ function colourBox(box, colour) {
     box.style.backgroundColor = colour
 }
 
-createGrid(30);
+createGrid(16);
 let boxes = document.querySelectorAll('div.box')
 
 colourGrid();
@@ -53,12 +56,29 @@ document.getElementById('reset').addEventListener('click', function () {
     })
 })
 
-document.getElementById('erase').addEventListener('click', function () {
+let eraser = document.getElementById('erase')
+eraser.addEventListener('click', function () {
+    erase = !erase
+    if(erase==true){
     curcolour = 'white'
+    eraser.classList.add('active')} else {curcolour = prevcolour
+        eraser.classList.remove('active')
+    }
+
 })
 
 
 picker.addEventListener('input',(e)=>{
     curcolour = e.target.value
+    prevcolour = e.target.value
     console.log(curcolour)
+})
+
+slider.addEventListener('input',(e)=>{
+    value = e.target.value
+    document.getElementById('value').textContent = value
+    container.innerHTML = ''
+    createGrid(value)
+    boxes = document.querySelectorAll('div.box')
+    colourGrid()
 })

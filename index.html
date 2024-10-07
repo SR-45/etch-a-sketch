@@ -11,6 +11,8 @@
 
 <body>
     <div class="title"> Etch-a-Sketch </div>
+    <div class="main">  
+
     <div id="container">
 
 
@@ -22,12 +24,19 @@
 
     </div>
 
-    <div class="buttons">
-    <button id="reset"> Reset </button>
-    <button id="erase"> Erase </button>
-    <input  id = "picker" type = "color"/>
+    <div class="options">
+        <div class="buttons">
+        <button id="reset"> Reset </button>
+        <button id="erase"> Erase </button>
+       </div>
+        <div class="slide">
+             <input id="picker" type="color" />
+            <p><span id="value"> 16 </span></p>
+            <input id="slider" type="range" min="1" max="100" value="16" step="1">
+            
+        </div>
+    </div>
 </div>
-
 </body>
 
 </html>
